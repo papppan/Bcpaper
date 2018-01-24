@@ -1,0 +1,157 @@
+
+---------------------------------------------------------------
+
+Dated 23 Jan. 
+
+Dear Sourav, 
+
+I am refering to the first of two expressions of eqn 5 within the draft. 
+
+Here for bcc kind of baryons, you can have operators like 
+
+(p, q, r) = (c, b, c) = OMEGA
+
+and 
+
+(p, q, r) = (c, c, b) = DIAG_DIQ. 
+
+Across all the versions of doubly flavored baryons, 
+OMEGA stands for operators with diquark formed by distinct flavors            and 
+DIAG_DIQ stands for operatoprs with diquark formed by identical flavors.
+
+Implies 
+
+1o2OMEGA_cxc = 1o2OMEGA_ccx. 
+
+In the newer versions of the correlator data (sometime after august 2017), I have made more strict conventions 
+in the file name such that the quark flavor content also reflects the diquark structure. 
+
+So in the newer versions you can see OMEGA files always have quark flavor content as OMEGA_cxc, 
+whereas DIAG_DIQ files always have quark flavor content as DIAG_DIQ_ccx. 
+
+Hope this clears the confusion. 
+
+Else we can discuss over skype as well. my username is papppan
+
+Thank you,
+Padmanath
+
+----
+
+Dear Sourav, Dear Nilmani,
+
+I updated the table IV, after Sourav's question on the same.
+The change is minimal, but now is consistent with the naming
+I use in the data files. Please tell me if there is still some confusion.
+
+Please find the new files attached. The Bcpaper.bib and Makefile
+remain untouched.
+
+I would suggest if you can open a git repository, for the versions
+on this draft.
+
+Thank you,
+Padmanath
+
+----
+
+Dear Sourav,
+
+Just to add, the files 1o2prime_*dat are also derived from OMEGA.
+So the diquark structure of 1o2prime_*dat are same as OMEGA.
+
+Note, 1o2prime_*dat and 1o2DIAG_DIQprime_*dat are distinct.
+
+1o2DIAG_DIQprime_*dat  have same diquark structure as DIAG_DIQ.
+
+Thank you,
+Padmanath
+
+---------------------------------------------------------------
+
+Dated 23 Jan. 2018
+
+Dear Padmanath,
+
+I have not go through the entire draft yet. I have few confusion regarding the operators i.e in Table IV.
+
+From that table I am assuming that
+
+1o2DIAG_DIQ_ccx  -------> O(c,c,b)
+1o2OMEGA_ccx      -------> O(b,c,c)
+
+Am I right in assuming that? If I am right then what are those "1o2OMEGA_cxc" combinations? Are they same with "1o2OMEGA_ccx"?
+I am asking this because the 32q correlators generated in august2017 have "1o2OMEGA_ccx" combinations instead of "1o2OMEGA_cxc",
+while the correlators generated in October2017(and recent 48q correlators) have "1o2OMEGA_cxc" instead of  "1o2OMEGA_ccx".
+
+Please clear my confusion.
+
+-- Sourav
+
+---------------------------------------------------------------
+
+Dated 21 Jan. 2018
+
+Dear Sourav, Dear Nilmani,
+
+Please find a version of our Bc paper. I have put my hands currently only on
+the introduction and technical details. Even these sections are still primitive
+and should be edited multiple times.
+
+I propose to set a time frame to report this paper in the arXiv as well as in
+the journal. And I suggest this time frame to be within March 15, 2018, beyond
+which I will also have shortage in time.
+
+Comments :
+
+- Compilation command
+     "make all"
+
+- I have not filled in your name, affiliation and email details. Please fill in in the appropriate
+  order.
+
+- Currently the draft contains various discussions that are quite incomplete,
+  as I do not have various details about the analysis. e.g. charm and bottom quark mass
+  tuning, quantification of discretization errors in terms of speed of light, heavy hadron 
+  chiral perturbation theory (HHXPT), the operator details, etc.
+
+- The operator discussions are in page 3 of this version. But to polish it, we need more on
+  the numbers from analysis. 
+
+- Of course, section on results, various plots etc, I leave it to you for the time being,
+  and once there is more matter in the draft, I shall give more active comments.
+
+- Please do not delete my comments or words inside the draft, even if you do not like
+  it or if you have a difference in opinion. You may please block/comment it out, instead of
+  deleting the comments and add in your version. This helps me while reviewing the draft.
+  We can always delete the commented matter in the tex file in the final draft, which we
+  submit to the arXiv and to the journal. 
+
+- I have not been quite good with making citations. But many references are already there (see bib file).
+  I have set a few tables with lot of estimates from literature, short description on the references,
+  included the references, etc.
+
+Thank you,
+Padmanath
+
+---------------------------------------------------------------
+
+Dated 22 Dec. 2017
+
+Hi Padmanath,
+
+I just started writing the B_c hadrons draft. I wrote an introduction and numerical details part. I have attached the tex and pdf file for that draft. 
+
+Please send your comments and suggestions. My plan is to write in details about the operators for the mesons and baryons. It will be great help if you can write a paragraph on operators.
+
+After that I want to put the results. At this moment I do not have the  results for the B_c mesons (I think Nilmani Da analysed those.)
+
+For the B_c Omega baryons  I am finding it is little difficult to make continuum extrapolations. 
+
+I can see that continuum extrapolations with the existing 48q data and improved 32q and improved 24q data are possible and those are consistent with Z. Brown's calculations.
+
+While I believe these 48q data are unimproved, continuum extrapolations with these 48q data with unimproved 32q and 24q are difficult.
+
+Moreover I need the 48q correlators with "XXC" and "XCC" combinations.
+
+-- Sourav 

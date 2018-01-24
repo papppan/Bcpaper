@@ -1,0 +1,624 @@
+\documentclass[showkeys,aps,10pt,twocolumn,showpacs,preprintnumbers,amsmath,amssymb,prd,letterpaper,floatfix,nofootinbib,superscriptaddress,]{revtex4-1}
+\usepackage{amsmath,amssymb}
+%\usepackage{color}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{soul}
+
+\newcommand\bef{\begin{figure}}
+\newcommand\eef[1]{\label{fg:#1}\end{figure}}
+\newcommand\besf{\begin{subfigure}}
+\newcommand\eesf[1]{\label{sfg:#1}\end{subfigure}}
+\newcommand\beq{\begin{equation}}
+\newcommand\eeq[1]{\label{#1}\end{equation}}
+\newcommand\beqa{\begin{eqnarray}}
+\newcommand\eeqa[1]{\label{#1}\end{eqnarray}}
+\newcommand\bet{\begin{table}}
+\newcommand\eet[1]{\label{tb:#1}\end{table}}
+\newcommand\best{\begin{subtable}}
+\newcommand\eest[1]{\label{stb:#1}\end{subtable}}
+\newcommand\betb{\begin{center}\begin{tabular}}
+\newcommand\eetb{\end{tabular}\end{center}}
+\newcommand\beit{\begin{itemize}}
+\newcommand\eeit{\end{itemize}}
+\newcommand\nn{\nonumber}
+
+\newcommand\fgn[1]{Figure \ref{fg:#1}}
+\newcommand\eqn[1]{eq.\ (\ref{#1})}
+\newcommand\scn[1]{Section \ref{s:#1}}
+\newcommand\tbn[1]{Table \ref{tb:#1}}
+\newcommand\ttbn[1]{\ref{tb:#1}}
+\newcommand\stbn[1]{Table \ref{stb:#1}}
+\newcommand\tstbn[1]{\ref{stb:#1}}
+\newcommand\apxn[1]{Appendix \ref{s:#1}}
+
+\newcommand\incfig[2]{\includegraphics[scale=#1]{#2}}
+\newcommand\self[1]{{\color{blue}\it Note to ourselves: #1}}
+
+\newcommand\au[2]{#1{(#2)}}
+\newcommand\aul[3]{#1^{+#2}_{-#3}}
+\newcommand\auls[4]{#1^{+#2}_{-#3}{(\pm#4)}}
+
+\newcommand\AV{{\scriptscriptstyle AV}}
+\newcommand\eint{E_{\rm int}}
+\newcommand\had{{\scriptscriptstyle H}}
+\newcommand\Nm{{\scriptscriptstyle N_-}}
+\newcommand\Np{{\scriptscriptstyle N_+}}
+\newcommand\PS{{\scriptscriptstyle PS}}
+\newcommand\SC{{\scriptscriptstyle S}}
+\newcommand\V{{\scriptscriptstyle V}}
+\newcommand\x{{\mathbf x}}
+
+\newcommand\cdof{\chi^2/\mathrm{DOF}}
+\newcommand\ie{{\sl i.e.\/}}
+\newcommand\etc{{\sl etc\/.}}
+\newcommand\tr{\mathrm{Tr}\;}
+\newcommand\formul{formul{\ae}}
+\newcommand\etal{{\sl et al.\/}}
+
+\newcommand\epj{{\sl Eur.\ Phys.\ J.\/}\ }
+\newcommand\jhep{{\sl J.\ H.\ E.\ P.\/}\ }
+\newcommand\np{{\sl Nucl.\ Phys.\/}\ }
+\newcommand\npbps{{\sl Nucl.\ Phys.\/} B ({\sl Proc. \ Suppl.\/})\ }
+\newcommand\pos{{\sl PoS\/}\ }
+\newcommand\pr{{\sl Phys.\ Rev.\/}\ }
+\newcommand\pls{{\sl Phys.\ Lett.\/}\ }
+\newcommand\prlt{{\sl Phys.\ Rev.\ Lett.\/}\ }
+\newcommand\arxiv[2]{{arXiv:#1 ~[#2]}\ }
+\newcommand\pmn[1]{\textcolor{red}{pmn : #1}}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Bottom-charmed hadrons from Lattice QCD}
+
+\author{M.\ \surname{Padmanath}}
+\email{Padmanath.M@physik.uni-regensburg.de}
+\affiliation{Instit\"ut  fur  Theoretische  Physik,  Universit\"at  Regensburg,
+Universit\"atsstrase  31,  93053  Regensburg,  Germany.}
+\author{Firstname\ \surname{Surname}}
+\email{firstname@yahoo.co.in}
+\affiliation{Affiliation here}
+
+\pacs{12.38.Gc, 14.40.Lb, 14.40.Nd, 14.20.Lq, 14.20.Mr}
+\keywords{Lattice QCD calculation, doubly heavy hadrons, bottom-charm hadrons}
+
+\begin{abstract}
+\self{To be written at the end of the paper preparation ...}
+\end{abstract}
+
+\maketitle
+
+The physics of heavy hadrons with only one heavy flavor is affected by the presence of two widely 
+separated scales : the $\Lambda_{QCD}$ and the relatively large heavy quark mass. For this reason
+the chiral quark dynamics, that determine the low energy spectrum of light hadrons, could have a 
+suppressed role in the heavy hadron excitations and hence heavy hadron physics plays important role 
+in our knowledge about the quark confining nature of strong interactions. Phenomenological approaches 
+based on empirical relations and simple minded calculations and ab-initio non-perturbative calculations
+such as lattice QCD have been quite successful in interpreting and predicting their low lying spectrum 
+\cite{}. Whereas, the predictions on heavy hadrons with two different flavors from such calculations 
+are yet to be tested. Investigations of such systems (bottom-charm hadrons) are highly appealing, as 
+these systems involve multiple scales : $1/m_b(\nu_b\sim0.05)$, $1/m_b(\nu_c\sim0.45)$ and $\Lambda_{QCD}$ 
+and hence can reveal numerous information on strongly interacting systems, which are hidden from 
+heavy hadrons with single heavy flavor. 
+
+In the bottom-charm sector, only two $B_c$ resonances have been observed experimentally : one at energy 
+$6275(1)$ MeV interpreted as the $J^0=0^-$ $B_c$ excitation based on quark model predictions and the 
+other observed recently by ATLAS with energy $6842(6)$ MeV, interpreted as the former first radial 
+excitation $B_c(2S)$. Multitude of phenomenological calculations exist in literature with predictions 
+for bottom-charm mesons \cite{} and baryons \cite{}. However, their predictions on the states vary widely 
+in energy. e.g. hyperfine splittings predicted for $B_c$ mesons spread over a range of 40-90 MeV \cite{}. 
+The spread of the higher excited states are even more scattered in pattern. Lattice QCD methods provide 
+a unique opportunity to study hadronic physics from frist principles and aid in complementing the 
+phenomenological calculations and interpreting and predicting experimental observations. In light of this, 
+multiple lattice computations of hadron spectrum using complementary lattice setups would be crucial to 
+ensure the robustness of lattice predictions. However, not many lattice calculations on bottom-charm 
+spectroscopy exist. Bottom-charm mesos have been studied by two collaborations \cite{} and only few 
+calculations exist for bottom-charm baryons \cite{}. 
+
+In this letter, we present the results from our lattice investigations of bottom-charm hadron spectrum. 
+\self{May be we should write this para towards the end ...}
+
+Three dynamical $N_f = $2+1+1 flavors lattice QCD ensembles generated by the MILC collaboration with 
+one-loop, tadpole improved Symanzik gauge action and Highly Improved Staggered Quark (HISQ) fermion 
+action \cite{} and lattice extensions $24^3\times64$, $32^3\times96$ and $48^3\times144$ at gauge 
+couplings $10/g^2 = 6.00$, 6.30 and 6.72 respectively are utilized for this calculation. Our estimates 
+for the lattice spacings on these ensembles from the lattice value of $\Omega$ baryon mass ($0.1192(14)$, 
+$0.0877(10)$ and $0.0582(5)$) are found to be consistent by indenpendent measurements by MILC 
+collaboration ($0.1207(11)$, $0.0888(8)$ and $0.0582(5)$) using the $r1$ parameter. We tune the valence 
+strange quark mass by setting the fictituous pseudoscalar $\bar ss$ mass to 685 MeV \cite{}. The quark 
+masses for the strange and the charm sea are set at their physical values, whereas the ratio of quark 
+masses $m_l/m_s$ in the sea is fixed to 0.2 for all three ensembles. The details of these lattice QCD 
+ensembles in use are summarized in Ref. \cite{}.  
+
+For the fermion measurements, we follow a mixed action approach by using an overlap action for quark 
+masses up to charm, whereas the bottom quarks are realized using a Non-Relativistic QCD (NRQCD) formulation. 
+Overlap fermion action has multiple desirable features that includes the exact chiral symmetry on the 
+lattice and automatic $\mathcal{O}(a)$ improvement. By adopting such a mixed action approach, one get 
+the advantage of having large set of configurations with small discretization errors as well as small 
+taste breaking effects. One also gets the advantage of simulating the quark masses all the way up to 
+charm quark with chiral fermions having no $\mathcal{O}(a)$ uncertainties. The numerical implementation 
+of the overlap femion action follows the Ref. \cite{}. The NRQCD Hamiltonian and the Green's function 
+we use in this calculation has been discussed in the Ref. \cite{}. We consider all the terms in the 
+Hamiltonian up to $1/M_0^2$ and the leading term of the order of $1/M_0^3$, where $M_0$ is the bare 
+bottom quark mass in lattice units. For the coarse and the fine lattice, we utilize the improvement 
+co-efficients in the NRQCD Hamiltonian, as estimated non-perturbatively by HPQCD collaboration \cite{}. 
+For the superfine lattice, we use the tree level co-efficients. The gauge configurations are fixed 
+to Coulomb gauge and then smeared with a single level of HYP blocking. Fermion measurements are made
+on these HYP smeared configurations with wall sources and point sinks. Using such measurements for a 
+large set of valence light quark masses on these ensembles, we are able to make systematic extrapolation 
+towards the chiral and continuum limits. 
+
+\pmn{The discussion on tuning the charm and the bottom quark masses, I would personally like to have a 
+discussion similar to the one discussed in \cite{Meinel:2010pv}. However, since I do not have the data 
+or the results from the tuning using kinetic mass and the speed of light measurements, I keep the 
+discussion short. But I give an outline of what should be discussed in my opinion. Once more info is 
+written in this section, I can polish it to look better}
+
+Heavy hadron observables are severely affected by the discretization uncertainties on the lattice, owing 
+to the large heavy quark mass. To quantify the discretization uncertainties in the charm and bottom sector, 
+we investigate the energy momentum dispersion relation of their respective 1S onium states. Firstly we tune 
+charm and the bottom quark masses by setting the spin averaged kinetic mass of their 1S ground states 
+to their physical value. We then investigate the speed of light ($c$) as dictated by these kinetic masses and 
+the continuum dispersion relation on the ensembles we use in our study. Closer the value of $c$ to unity, 
+smaller the discretization errors. A similar magnitude of cut-off errors, as quantified by $c$, are expected 
+other observables with heavy quarks. In \tbn{speedlight}, we present the speed of light measurements. 
+
+\bet[h]
+\centering
+\begin{tabular}{c|c|c|c}
+\hline
+\hline
+momentum($|{\mathbf{n}}|$) & Ensemble1 & Ensemble2 & Ensemble3 \\
+\hline
+1 & 0.98(2) & 0.96(2) & 0.94(2) \\
+2 & 0.98(2) & 0.96(2) & 0.94(2) \\
+3 & 0.98(2) & 0.96(2) & 0.94(2) \\
+\hline
+\end{tabular}
+\caption{Speed of light measurements. \pmn{Number currently in \tbn{speedlight} are temporary values.}}
+%\end{table}
+\eet{speedlight}
+
+To further demonstrate the quality of our heavy qaurk treatment, we present various hyperfine 
+splittings involving heavy quarks. Hyperfine splittings are generally affected by discretization 
+errors. In the \tbn{hfsmesons}, we present the chiral extrapolated hyperfine splittings for 
+a collection of heavy mesons on the ensembles we use in this study. 
+
+\bet[h]
+\centering
+\begin{tabular}{c|c|c}
+\hline
+\hline
+Meson     & HFS & EXP        \\
+\hline
+$\bar cu$ &  -  & 142        \\ 
+$\bar cs$ &  -  & 143.8(4)   \\
+$\bar cc$ &  -  & 113.5(5)   \\
+$\bar bu$ &  -  & 45.2(2)    \\ 
+$\bar bs$ &  -  & 49(2)      \\
+$\bar bb$ &  -  & 61(2)      \\
+\hline
+\end{tabular}
+\caption{Hyperfine splittings in heavy mesons \pmn{Number currently in \tbn{hfsmesons} are temporary values.}}
+\eet{hfsmesons}
+
+\pmn{The section on heavy hadron chiral perturbation theory is a mere copy of the proceedings. 
+I need more time to build some words for this. I keep this here to note the position of the discussions.}
+
+In order to reduce discretization errors, we perform chiral extrapolation on the ratios of 
+baryon masses ($M_ba$) to the $1S$ spin-average mass ($M_{1S}a$), i.e., $M_b^r = M_ba/nM_{1S}a$, 
+where $n = 1/2$ and 1 for singly-and doubly charmed baryons, respectively. The chiral 
+extrapolations are made with a naive quadratic fit form in the quark mass, $M_b^r = A+B.(m_{\pi}a)^2$, 
+as well as with a chiral extrapolation form (equations below) using heavy baryon chiral 
+perturbation theory (HBChPT), as described in Ref.~\cite{Briceno:2012wt}.
+
+\beqa
+\nn \frac{m_{\Lambda_c}}{m_{spin av.}}&&=\frac{m_{\Lambda_c}^0}{m_{spin av.}^0}+\frac{\sigma_{\Lambda_c}}{(4\pi f_{\pi})m_{spin av.}}m_{\pi}^2 \\
+\nn &&- \frac{6g_3^2}{(4\pi f_{\pi})^2(m_{spin av.})}\Bigl(\frac{1}{3}\mathcal{F}(m_{\pi},\Delta_{\Lambda_c\Sigma_c,\mu}) \\
+&& \qquad \qquad \qquad +\frac{2}{3}\mathcal{F}(m_{\pi},\Delta_{\Lambda_c\Sigma_c^*,\mu})\Bigr) \label{chextrplnfrm1} \\	
+\nn \frac{m_{\Xi_c}}{m_{spin av.}}&&=\frac{m_{\Xi_c}^0}{m_{spin av.}^0}+\frac{\sigma_{\Xi_c}}{(4\pi f_{\pi})m_{spin av.}}m_{\pi}^2 \\
+\nn && - \frac{3}{2}\frac{g_3^2}{(4\pi f_{\pi})^2(m_{spin av.})}\Bigl(\frac{1}{3}\mathcal{F}(m_{\pi},\Delta_{\Xi_c\Xi_c^{\prime},\mu}) \\
+&& \qquad \qquad \qquad  +\frac{2}{3}\mathcal{F}(m_{\pi},\Delta_{\Xi_c\Xi_c^*,\mu})\Bigr)
+\eeqa{chextrplnfrm2}
+
+for $\Lambda_c$ and $\Xi_c$ respectively. The chiral function $\mathcal{F}$ is defined as,
+
+\beqa
+\nn \mathcal{F}(m,\Delta, \mu)&&=(\Delta^2-m^2+i\epsilon)^{3/2}\ln\left(\frac{\Delta + \sqrt{\Delta^2-m^2+i\epsilon}}{\Delta -\sqrt{\Delta^2-m^2+i\epsilon}}\right) \\
+&& -\frac{3}{2}\Delta m^2\ln\left(\frac{m^2}{\mu^2}\right)-\Delta^3\ln\left(\frac{4\Delta^2}{m^2}\right),
+\eeqa{Ffunc}
+
+with $\mathcal{F}(m,0,\mu)=\pi m_{\pi}^3$. Splittings $\Delta$ used in the extrapolation formula 
+are obtained by extrapolating the splittings between two baryons to the physical pion masses 
+using trivial extrapolation form 
+
+ \beq
+ \Delta_{ij}=\Delta_{ij}^0+A.(m_{\pi}a)^2,
+ \eeq{Deltaij}
+
+where $i$ and $j$ are the baryons under consideration. For $\Lambda_c$ and $\Xi_c$ we could use 
+HBChPT with $\chi^2/dof \sim 1$. We then perform continuum extrapolation of the chirally 
+extrapolated ratios with a form up to $\mathcal{O}(a^2)$ terms. Finally to obtain the physical 
+values we multiply the extrapolated values by $nM_{phy}(1S:c\overline{c})$. 
+
+Hadron spectroscopy on the lattice proceeds by computing two point correlation functions between 
+hadronic observables, followed by non-linear fitting techniques to estimate the energy of the 
+excitations. We follow the same conventional strategy. In what follows we describe the meson 
+and baryon interpolating operators we use in this study. For mesons, we use the basic local interpolator 
+type ($\bar p \Gamma ~q$), where $p$ and $q$ refer to the quark fields and $\Gamma$ 
+as given in the \tbn{mesonops} for various quantum channels.
+
+\bet[h]
+\centering
+\begin{tabular}{c|c|c|c|c|c}
+\hline
+$J^{PC}$ &          $0^{-+}$             &   $1^{--}$ &    $0^{++}$   &   $1^{++}$          & $1^{+-}$            \\\hline
+$\Gamma$ & $\gamma_5, ~\gamma_5\gamma_t$ & $\gamma_i$ & $I, \gamma_t$ & $\gamma_i \gamma_5$ & $\gamma_i \gamma_j$ \\\hline
+info     &  pscalar                      &  vector    &   scalar      &    pvector          & tensor              \\
+for us   &  a4a4                         &            &   scalar0     &                     &                     \\
+\hline
+\end{tabular}
+\caption{Meson operators used. The subscripts $i$ and $j$ runs over $x$, $y$ and $z$.}
+\eet{mesonops}
+
+For the baryons, we use the following conventional three quarks operators 
+\beqa
+\nn \mathcal{O}_{5}^{\gamma}(p, q, r) &=& \epsilon^{abc} \Bigl(p_a^{\alpha} (C \gamma_5)_{\alpha\beta} q_b^{\beta}\Bigr) r_c^{\gamma}\mbox{\quad and} \\
+\mathcal{O}_{j}^{\gamma}(p, q, r) &=& \epsilon^{abc} \Bigl(p_a^{\alpha} (C \gamma_j)_{\alpha\beta} q_b^{\beta}\Bigr) r_c^{\gamma}, 
+\eeqa{baryonops} 
+
+where $p$, $q$ and $r$ refer to the quark fields, $a$, $b$ and $c$ refer to color indices, $\alpha$,
+$\beta$ and $\gamma$ refer to the Dirac indices, $\epsilon^{abc}$ is the Levi-Civita tensor 
+anti-symmetrizing the color indices, $C$ is the charge conjugation matrix given by $\gamma_t\gamma_y$
+and $j$ runs over  $x$, $y$ and $z$. The positive parity and negative parity components are projected 
+out using the projection operators 
+
+\beq
+\mathcal{P}_{\pm} = \frac12(1\pm\gamma_t).
+\eeq{parityproj}
+
+$\mathcal{O}_{j}^{\gamma}$ couples to $\frac32$ as well as $\frac12$ in general. To project out the
+individual spin components, we use the spin projection operators \cite{Bowler:1996ws}
+
+\beq
+\mathcal{P}^{3/2}_{ij} = \delta_{ij} - \frac13\gamma_i\gamma_j \mbox{ ~and~ } \mathcal{P}^{1/2}_{ij} = \frac13\gamma_i\gamma_j.
+\eeq{spinproj}
+
+\pmn{In \tbn{baryonopss}, I list the collection operators implemented in our codes. We can finalize 
+this table based on the analysis.}
+
+\bet[h]
+\centering
+\begin{tabular}{c|c|c|c}
+\hline
+\hline
+Baryon           & $J^P$       &  Operator                                                     & Internal name     \\\hline
+$\Xi_{bc}$       & $\frac12^+$ &  $\mathcal{O}_{5}^{\gamma}([b, c, u])$                        & 1o2XI             \\
+$\Xi_{bc}'$      & $\frac12^+$ &  $\mathcal{P}^{1/2}_{ij} \mathcal{O}_{j}^{\gamma}([b, c, u])$ & 1o2XIprime        \\
+$\Xi_{bc}^*$     & $\frac32^+$ &  $\mathcal{P}^{3/2}_{ij} \mathcal{O}_{j}^{\gamma}([b, c, u])$ & 3o2XI             \\
+$\Omega_{bc}$    & $\frac12^+$ &  $\mathcal{O}_{5}^{\gamma}([b, c, s])$                        & 1o2XI             \\
+$\Omega_{bc}'$   & $\frac12^+$ &  $\mathcal{P}^{1/2}_{ij} \mathcal{O}_{j}^{\gamma}([b, c, s])$ & 1o2XIprime        \\
+$\Omega_{bc}^*$  & $\frac32^+$ &  $\mathcal{P}^{3/2}_{ij} \mathcal{O}_{j}^{\gamma}([b, c, s])$ & 3o2XI             \\
+$\Omega_{bcc}$   & $\frac12^+$ &  $\mathcal{O}_{5}^{\gamma}(c, b, c)$                          & 1o2OMEGA          \\
+                 &             &  $\mathcal{O}_{5}^{\gamma}(c, c, b)$                          & 1o2DIAG\_DIQ      \\
+$\Omega_{bcc}'$  & $\frac12^+$ &  $\mathcal{P}^{1/2}_{ij} \mathcal{O}_{j}^{\gamma}(c, b, c)$   & 1o2prime          \\
+                 &             &  $\mathcal{P}^{1/2}_{ij} \mathcal{O}_{j}^{\gamma}(c, c, b)$   & 1o2DIAG\_DIQprime \\
+$\Omega_{bcc}^*$ & $\frac32^+$ &  $\mathcal{P}^{3/2}_{ij} \mathcal{O}_{j}^{\gamma}(c, b, c)$   & 3o2OMEGA          \\
+                 &             &  $\mathcal{P}^{3/2}_{ij} \mathcal{O}_{j}^{\gamma}(c, c, b)$   & 3o2DIAG\_DIQ      \\
+$\Omega_{cbb}$   & $\frac12^+$ &  $\mathcal{O}_{5}^{\gamma}(b, c, b)$                          & 1o2OMEGA          \\
+                 &             &  $\mathcal{O}_{5}^{\gamma}(b, b, c)$                          & 1o2DIAG\_DIQ      \\
+$\Omega_{cbb}'$  & $\frac12^+$ &  $\mathcal{P}^{1/2}_{ij} \mathcal{O}_{j}^{\gamma}(b, c, b)$   & 1o2prime          \\
+                 &             &  $\mathcal{P}^{1/2}_{ij} \mathcal{O}_{j}^{\gamma}(b, b, c)$   & 1o2DIAG\_DIQprime \\
+$\Omega_{cbb}^*$ & $\frac32^+$ &  $\mathcal{P}^{3/2}_{ij} \mathcal{O}_{j}^{\gamma}(b, c, b)$   & 3o2OMEGA          \\
+                 &             &  $\mathcal{P}^{3/2}_{ij} \mathcal{O}_{j}^{\gamma}(b, b, c)$   & 3o2DIAG\_DIQ      \\
+\hline
+\hline
+\end{tabular}
+\caption{Baryon operators used. The subscripts $i$ and $j$ runs over $x$, $y$ and $z$. $[b, c, u]$ implies 
+three such operators are build by forming cyclic rotation of the flavors. Some of baryons mentioned in the first column 
+are fictituous.}
+\eet{baryonopss}
+
+
+% 
+% \paragraph{Introduction}Recent discoveries of the heavy sub-atomic particles~\cite{Patrignani:2016xqp} has created resurgent 
+% interests in the study of heavy hdrons. Numerical simulation techniques of Lattice QCD provide a unique opportunity to study the physics of heavy hadrons and their energy spectra. Enormous amount of progress has been made to study the ground and excited state spectra of the hadrons containg charm quarks. However, the study of mixed flavour heavy hadrons containing both bottom 
+% and charm quarks are quite challenging. One needs to treat the charm and bottom quarks differently 
+% to study those mixed flavour heavy hadrons. Non relativistic QCD (NRQCD) formulation is needed for the
+% bottom quarks.
+% 
+% Although enormous amount of study has been made for the heavy quarkonia and heavy light mesons, not much is known about the mixed flavour heavy meson containg bottom and charm quarks. The physics of $B_c$ meson involves multiple scales : $1/m_b$ $(v_b=0.05)$, $1/m_c$ $(v_c=0.4-0.5)$ and $\Lambda_{QCD}$. Study of mixed flavour heavy mesons plays a very important role in the understanding of both the strong and weak interaction physics. The $B_c$ mesons decays only through the weak interactions. The spectroscopy of the $B_c$ mesons can be used to test heavy quark potential models~\cite{refsPotmodel} and the QCD sum rule calculations~\cite{sumrules}. The study of mass spectra, hyperfine splittings and other spin splittings of these states can shed lights on the structure of these states and to investigate whether these states behaves like heavy-light mesons or like quarkonia states. 
+% 
+% The study of charmed and bottom baryon spectra experienced spectacular progress in recent years. Not much study has been made for the baryons containing charm and bottom quarks only. The quark-diquark model, which reduces the three body problem to a two body problem for the baryons, have been tested for the singly and doubly heavy baryons []. Lattice study of the $ccb$ and $bbc$ systems can be used to test the quark-diquark model for these systems.
+% 
+% Among all these mixed flavour heavy mesons only $B_c(0^-)$ with mass 6275(1) MeV and $B_c^{0^-}(2S)$ with mass $6842\pm4\pm5$ MeV are detected experimentally. None of the triply heavy baryons containg both the charm and bottom quarks detected. Significant amount of theoretical predictions [] based on the quark model calculation has been done, while very few theoretical predictions for triply heavy charmed bottom baryons are available. 
+% %Very few lattice QCD 
+% %calculations for the charmed bottom mesons and charmed bottom triply heavy baryons are available, 
+% %while extensive lattice study for the heavy-light mesons, heavy-heavy quarkonia, singly and doubly heavy baryons has been done.
+% Lattice QCD offers first principle model independent calculations of the energy spectra as well as hypefine splittings of these baryonic states. Extensive lattice study for the heavy-light mesons, heavy-heavy quarkonia, singly and doubly heavy baryons has been done. However, very few lattice QCD 
+% calculations for the charmed bottom mesons and charmed bottom triply heavy baryons are available.
+% 
+% In this letter, we present our results for the charmed bottom meson and baryons from the lattice QCD calculations. We use overlap action for the valence charm quark and a NRQCD action for the valence bottom quark.
+% 
+% \paragraph{Numerical details}We use three sets of dynamical 2+1+1 flavour gauge ensembles generated by MILC collaboration using HISQ action on lattices of size $24^3\times 64$, $32^3\times 96$ and $48^3\times 144$. Corresponding gauge  coupling $\beta$ for the three lattices are $6.00$, $6.30$ and $6.72$ respectively. Lattice spacings calculated for those three lattices using $\Omega_{sss}$ baryon are $0.1207(11)$, $0.0888(8)$ 
+% and $0.0582(5)$ fm respectively, where we use the value  of unphysical $\overline{s}s$ pseudoscalar mass equal to $685$ MeV to tune the strange quark mass. These calculations of lattice spacings are found to be consistent with the calculation by MILC collaboration using $r_1$ parameter.
+% 
+% For the charm quark we use chirally symmetric overlap fermions, which does not have $\mathcal{O}(ma)$ 
+% error. We follow the $\chi QCD$ collaborations methods [YChenChiQCD] for the numerical implementations of overlap fermion.  Arnoldi method used to project out the smallest eigen modes to speed up the invertion of the overlap charm action and sign function is evaluated using Zolotarev approximation.
+% 
+% For the bottom quarks we use a non-relativistic formulation [LepageNRQCD]. All terms upto $\frac{1}{M_0^2}$ and leading term of order of $\frac{1}{M_0^3}$ have been considered, where $M_0$ 
+% represents bare bottom quark mass in lattice units. The NRQCD Hamiltonian can be written as, 
+% \beq
+% H=H_0 + \delta H
+% \eeq{} 
+% where the kinetic term $H_0$ is defined by,
+% \beq
+% H_0=-\frac{\Delta^{(2)}}{2M_0},
+% \eeq{}
+% whereas the interaction term $\delta H$ is given by, 
+% %\begin{dmath}
+% \begin{align}
+% %\begin{multiline}
+% \begin{split}
+% 	\delta H= -c_1\frac{(\Delta^{(2)})^2}{8M_0^3}+
+% 	  c_2\frac{i}{8M_0^2}(\tilde{\nabla}\cdot\tilde{E}-\tilde{E}\cdot\tilde{\nabla}) \\ -c_3\frac{1}{8M_0^2}\sigma\cdot(\tilde{\nabla}\times\tilde{E}-\tilde{E}\times\tilde{\nabla})\\
+% 	  -c_4\frac{1}{2M_0}\sigma\cdot\tilde{B}+c_5\frac{\Delta^{(4)}}{24M_0}-c_6\frac{(\Delta^{(2)})^2}{8nM_0^2}.
+% \end{split}
+% %\end{multiline}
+% \end{align}
+% %\end{dmath}
+% An $\mathcal{O}(a)$ corrected form of descritization is assumed for the terms with tilde. $\nabla$ represents the symmetric lattice derivative while $\Delta^{(2)}$ and $\Delta^{(4)}$ are the lattice descretized version of $\sum_i D^2$ and $\sum_i D^4$, respectively. This Hamiltonian is described in details in Ref.~\cite{RLewis:2009}. Spin independent $\mathcal{O}(v^4)$ terms are included to improve the Hamiltonian. We use tree level values for the coefficients $c_1$ to $c_6$ for the finer lattice. For the 
+% coarser lattices we use the improved coefficients as estimated non-perturbatively by the HPQCD collaboration~\cite{dowdall:2012}.
+% 
+% To calculate these quark propagators a wall source is utilized as smearing function. The spin averaged $1S$ bottonium mass is used to tune the bottom quark mass. The kinetic mass relation for lattice spin 
+% averaged mass is given by, 
+% \beq
+% \overline{M}_{kin}(1S)=\frac{3}{4}aM_{kin}(\Upsilon)+\frac{1}{4}aM_{kin}(\eta_b)
+% \eeq{}  
+% where the relativistic energy-momentum dispersion relation,
+% \beq
+% aM_{kin}=\frac{a^2p^2-(a\Delta E)^2}{2a\Delta E},
+% \eeq{}
+% is used to calculate the lattice kinetic mass and $a\Delta E$ s are calculated from the energy difference 
+% between meson with momenta $pa$ and $0$. 
+% 
+% We obtain energy values from the correlators with finite momenta using a momentum induced wall source. The quark content and operators for the $B_c$ mesons and the charmed bottom baryons are 
+% given in table [] and table [] respectively.
+% 
+
+
+\section{Literature survey}
+
+\bet[h]
+\centering
+\begin{tabular}{cccccc}
+\hline
+\hline
+Reference                               &       $\Xi_{bc}$         &        $\Xi_{bc}'$        &         $\Xi_{bc}^*$        &       $\Omega_{bc}$     &     $\Omega_{bc}^*$     \\
+\hline
+\cite{Karliner:2014gca}                 &        6914(13)          &          6933(12)         &            -                &              -           &        -                \\
+\cite{Bjorken:1986xpa}                  &        6916(139)         &          6976(99)         &           7013(84)          &          7073(130)       &        7160(84)         \\
+\cite{Anikeev:2001rk}                   &        6938              &          6971             &           7000              &          7095            &        7128             \\
+\cite{Bagan:1994dy}                     &        6930(50)          &            -              &             -               &          7000(50)        &          -              \\
+\cite{Roncaglia:1995az}                 &        6990(90)          &          7040(90)         &           7060(90)          &          7060(90)        &        7120(90)         \\
+\cite{Lichtenberg:1995kg}               &        7029              &          7053             &           7083              &          7126            &        7165             \\
+\cite{Ebert:1996ec}                     &        6950              &          7000             &           7020              &          7050            &        7110             \\
+\cite{SilvestreBrac:1996wp}             &        6916              &           -               &           6991              &          7005            &        7073             \\
+\cite{Kiselev:2001fw}                   &        6820              &          6850             &           6900              &          6910            &        6990             \\
+\cite{Narodetskii:2002ib}               &        6960              &            -              &             -               &          7130            &          -              \\
+\cite{Ebert:2002ig}                     &        6933              &          6963             &           6980              &          7088            &        7130             \\
+\cite{He:2004px}                        &        6838              &          7028             &           6986              &          6941            &        7077             \\
+\cite{Albertus:2006ya}                  &     6919($\substack{+17 \\ -7}$)   &  6948($\substack{+17 \\ -6}$) & 6986($\substack{+14 \\ -5}$) &  6986($\substack{+27 \\ -17}$)  &  7046($\substack{+11 \\ -9}$) \\
+\cite{Roberts:2007ni}                   &        7011              &          7047             &           7074              &          7136            &        7187             \\
+\cite{Weng:2010rb}                      &        6840              &            -              &             -               &          6945            &          -              \\ 
+\cite{Zhang:2008rt}                     &        6750(50)          &          6950(80)         &           8000(260)         &          7020(80)        &        7540(80)         \\
+\cite{Shah:2016vmd,Shah:2017liu}        &        6920              &          -                &           6986              &          7136            &        7187             \\
+\cite{Aliev:2012ru,Aliev:2012iv}        &        6720(200)         &          6790(200)        &           7250(200)         &          6750(300)       &        7300(200)        \\
+\cite{Eakins:2012jk}                    &        7014              &          -                &           7064              &          -               &        -                \\
+\cite{Giannuzzi:2009gh}                 &        6904              &          6920             &           6936              &          6994            &        7017             \\
+\cite{Bernotas:2008fv}                  &        6846              &          6891             &           6919              &          6999            &        7063             \\
+\cite{Gershtein:2000nx}                 &        6820              &          6850             &             -               &          -               &          -              \\
+\cite{Tang:2011fv}                      &        6650              &          6610             &           6690              &          6750            &        6770             \\
+\cite{Martynenko:2007je}                &        6792              &          6825             &           6827              &          6999            &        7024             \\
+\cite{Ponce:1978gk}                     &        6842              &          -                &           6919              &          6988            &        7054             \\
+\cite{Ghalenovi:2014swa}                &        7037(50)          &          -                &           7114(31)          &          7164(61)        &        7242(42)         \\
+\hline
+\cite{Brown:2014ena}                    &  6493($\substack{33 \\ 28}$) & 6959($\substack{36 \\ 28}$) & 6985($\substack{36 \\ 28}$) & 6998($\substack{27 \\ 20}$) & 7059($\substack{28 \\ 21}$) \\
+&&&& 7032($\substack{28 \\ 20}$) & \\
+\hline
+\hline
+\end{tabular}
+\caption{}
+%\end{table}
+\eet{Baryon summary_table}
+
+\bet[h]
+\centering
+\begin{tabular}{ccccc}
+\hline
+\hline
+Reference                               &       $\Omega_{bcc}$     &        $\Omega_{bcc}^*$   &      $\Omega_{bbc}$     &     $\Omega_{bbc}^*$     \\
+\hline
+\cite{Bjorken:1986xpa}                  &        8250(107)         &          8254(105)        &       11549(149)        &        11553(147)        \\                 
+\cite{Anikeev:2001rk}                   &        8198              &          8202             &       11476             &        11481             \\
+\cite{Roberts:2007ni}                   &        8245              &          8265             &       11535             &        11554             \\
+\cite{Giannuzzi:2009gh}                 &        7832              &          7839             &       11108             &        11115             \\
+\cite{Zhang:2009re}                     &        7410(130)         &          7450(160)        &       10300(100)        &        10540(110)        \\
+\cite{Gershtein:2000nx}                 &        -                 &           -               &       11120             &        11180             \\
+\cite{Martynenko:2007je}                &        8018              &          8025             &       11280             &        11287             \\
+\cite{Wang:2011ae}                      &        8230(130)         &          8230(130)        &       11500(110)        &        11490(110)        \\
+\cite{Flynn:2011gf}                     &        8018              &          8046             &       11214             &        11245             \\
+\cite{Jia:2006gw}                       &        7980(70)          &           -               &       11480(120)        &         -                \\
+\cite{Hasenfratz:1980ka}                &        -                 &          8030             &       -                 &        11200             \\
+\cite{Ponce:1978gk}                     &        -                 &          8039             &       -                 &        11152             \\
+\cite{Bernotas:2008bu}                  &        7984              &          8005             &       11139             &        11163             \\
+\cite{Ghalenovi:2014swa}                &        8274(84)          &          8353(63)         &       11640(98)         &        11725(76)         \\
+\hline
+\cite{Brown:2014ena}                    &  8007($\substack{9 \\ 20}$) & 8037($\substack{9 \\ 20}$) & 11195($\substack{8 \\ 20}$) & 11229($\substack{8 \\ 20}$) \\
+\hline
+\hline
+\end{tabular}
+\caption{}
+%\end{table}
+\eet{Baryon summary_table}
+
+\bet[h]
+\centering
+\begin{tabular}{ccccc}
+\hline
+\hline
+Reference                               &       $0^-$              &            $1^-$          &      $0^+$              &     $1^+$                \\
+\hline
+\cite{Bagan:1994dy}                     &       6255(20)           &            6330(20)       &        -                &       -                  \\
+\cite{Ponce:1978gk}                     &       6347               &            6388           &        -                &       -                  \\
+\cite{Bernotas:2008bu}                  &       6304               &            6342           &        -                &       -                  \\
+\cite{Godfrey:1985xj}                   &       6270               &            6340           &        -                &       -                  \\
+                                        &       6850               &            6890           &        -                &       -                  \\
+\cite{Vijande:2004he}                   &       6277               &            -              &        -                &       -                  \\
+\cite{Zeng:1994vj}                      &       6260               &            6340           &       6680              &     6730/40              \\
+\cite{Ebert:2002pp}                     &       6270               &            6332           &       6699              &     6734/49              \\
+\cite{Gupta:1995ps}                     &       6247               &            6308           &       6688              &     6738/57              \\
+\cite{Kiselev:1994rc}                   &       6253               &            6317           &       6683              &     6717/29              \\
+\cite{Eichten:1994gt}                   &       6264               &            6337           &       6700              &     6730/36              \\
+\cite{Godfrey:2004ya}                   &       6286               &            6341           &       6701              &     6737/60              \\
+\cite{Monteiro:2016rzi}                 &       6275               &            6314           &       6672              &     6766/828             \\
+\hline
+\cite{Allison:2004be}                   &       6304(4)(11)($\substack{+18 \\ 0}$)           &-&        -                &       -                  \\ 
+\cite{Gregory:2010gm,Gregory:2009hq}    &       6280(4)            &            6300(7)(2)(6)  &        -                &       -                  \\
+\cite{Wurtz:2015mqa}                    &        -                 &            6333(3)        &       6711(2)           &     6752(2)              \\  
+                                        &       6843(6)            &            6878(6)        &        -                &     6764(2)              \\
+\cite{Dowdall:2012ab}                   &       6278(4)(8)         &            6332(5)(8)     &       6707(14)(8)       &     6742(14)(8)          \\
+                                        &       6894(19)(8)        &            6922(19)(8)    &        -                &       -                  \\
+\hline
+\hline
+\end{tabular}
+\caption{$B_c$}
+%\end{table}
+\eet{Baryon summary_table}
+
+\beit
+
+\item[] \cite{Karliner:2014gca} : Karliner and Rosner, publication in 2014. Comments on the masses, production, decays and detection. 
+         Masses predicted using on empirical relations based on constituent quark masses.
+
+\item[] \cite{Bjorken:1986xpa}  : 1896 Fermilab report by Bjorken. Simple-minded calculation based on observed ground state light 
+        and strange baryon spectra. 
+
+\item[] \cite{Anikeev:2001rk} : Tevatron B-Physics report 2001. Masses based on relations proposed by Bjorken \cite{Bjorken:1985ei} and 
+                                DGG \cite{DeRujula:1975qlm}.
+
+\item[] \cite{Bagan:1994dy} : 1994 Potential model for masses by Bagan, Richad et al. 
+                              decay constants, decay modes are discussed with QCDSR framework. 
+
+\item[] \cite{Roncaglia:1995az} : 1995 (Roncaglia, Lichtenberg, Predazzi) Predictions based on Feynmann-Hellman Theorem (FHT) and semi-empirical mass relations.
+
+\item[] \cite{Lichtenberg:1995kg} : 1996 (Lichtenberg, Roncaglia, Predazzi) Prediction based on CQM, FHT, empirical mass formulaes. 
+
+\item[] \cite{Ebert:1996ec} : 1996 Ebert et al. Relativistic quasipotential quark models.
+
+\item[] \cite{SilvestreBrac:1996wp} : 1996 Silvestre-Brac; Interquark potentials plus Faddeev equations for three body systems. 
+
+\item[] \cite{Kiselev:2001fw} : 2001 Kiselve and Likhoded; Potential approach and QCD sum rules. 
+
+\item[] \cite{Narodetskii:2002ib} : 2002 Narodetskii and Trusov; Non-perturbative string approach
+
+\item[] \cite{Ebert:2002ig} : 2002, Ebert et al. Relativistic quark model within light quark heavy diquark picture. 
+ 
+\item[] \cite{He:2004px} : 2004, He et al. Doubly heavy baryons based on MIT bag model 
+
+\item[] \cite{Albertus:2006ya} : 2006 Albertus et al. Variational method plus heavy quark spin symmetry constraints. 
+
+\item[] \cite{Roberts:2007ni} : 2008 Pervin and Roberts, Constituent Quark model 
+
+\item[] \cite{Weng:2010rb} : 2010, Weng et al, Covariant instantaneous approximation plus Bethe-Salpeter equations.
+                               Interesting naming to divert the reader? Covariant instantaneous approximation? 
+                               Does it not simply mean an instantaneous potential?
+
+\item[] \cite{Zhang:2008rt,Zhang:2009re} : 2008 Zhang and Huang, QCD sum rules. 
+
+\item[] \cite{Shah:2016vmd,Shah:2017liu} : 2016-7 Zalak Shah, CQM within hyper Coulomb potential.
+
+\item[] \cite{Aliev:2012ru,Aliev:2012iv} 2012 Aliev et al. QCD sum rules. 
+
+\item[] \cite{Eakins:2012jk} : 2012 Eakins and Roberts, CQM plus superflavor symmetry (frozen or relatively high diquark excitations)
+                               Reconsidering reading this reference.
+
+\item[] \cite{Giannuzzi:2009gh} : 2009, Giannuzzi. Semi-relativistic quark model, with potential model inspired from AdS/QCD correspondence. 
+
+\item[] \cite{Bernotas:2008fv, Bernotas:2008bu} : 2008 Bernotas and Simonis, MIT bag model. 
+
+\item[] \cite{Gershtein:2000nx} : 2000 Gershtein, Kiselev, et al. 
+
+\item[] \cite{Tang:2011fv} : 2011 Tang et al. QCD sum rules plus diquark model. 
+
+\item[] \cite{Martynenko:2007je} : 2008 Matrynenko. Relativistic quark model with hyperspherical expansion. 
+
+\item[] \cite{Hasenfratz:1980ka} : 1980 Peter Hasenfratz, Bag model 
+
+\item[] \cite{Wang:2011ae} : 2011 Wang. Triply heavy baryons from QCD sum rules. 
+
+\item[] \cite{Flynn:2011gf} : 2011 Flynn et al. HQSS. 
+
+\item[] \cite{Jia:2006gw} : 2006 Jia, Weakly coupled Coulomb bound states. 
+
+\item[] \cite{Brown:2014ena} : Brown et al. Lattice calculation. u, d and s domain wall; c RHQA and NRQCD for b. 
+         SU(4|2) heavy-hadron chiral perturbation theory including $1/m_Q$ and finite volume effects. 
+         Continuum extrapolation also performed.  
+
+\item[] \cite{Ponce:1978gk} : 1978 Ponce, Bag model.
+
+\item[] \cite{Tsuge:1985ei} : 1985 Tsuge, Morii and Morishita. Potential model with relativisitic corrections. 
+                              Paper not accessible to me. 
+
+\item[] \cite{LlanesEstrada:2011kc} : 2011 Llanes-Estrada, NNLO pNRQCD and three body variational approach. 
+
+\item[] \cite{Ghalenovi:2014swa} : 2014, Ghalenovi et al. NR CQM with hypercentral approach. 
+
+\item[] \cite{Mathur:2002ce} : 2002 Nilmani quenched calculation.
+                               Look into the table V. Nilmani will take care of these numbers. 
+ 
+\item[] \cite{Garcilazo:2016piq} : 2016 Garcilazo. Potential model studies with inputs/constraints from lattice QCD results.
+                                   No numbers, but plots. One has to pixel read them.  
+
+\item[] \cite{Allison:2004be} : 2005 PRL. HPQCD, Fermilab, UKQCD study of Bc meson in 3 flavor QCD. 
+
+\item[] \cite{Godfrey:1985xj} : i1985 Godfrey and Isgur. Relativised CQM.
+
+\item[] \cite{Vijande:2004he} : 2004 Vijande et al. CQM.  
+
+\item[] \cite{Zeng:1994vj} : 1994 Zeng, Roberts, Van Orden. Spectator equation. Relation to Bethe-Salpeter equations. 
+
+\item[] \cite{Ebert:2002pp} : 2002 Ebert et al. Relativistic quark model 
+
+\item[] \cite{Gupta:1995ps} : 1995 Gupta and Johnson. Potential model. 
+
+\item[] \cite{Kiselev:1994rc} : 1995 Kiselev et al. QCD sum rules and potential model.
+
+\item[] \cite{Eichten:1994gt} : 1994 Eichten and Quigg, empirical determination based on observed states in charmonia and bottomonia. 
+
+\item[] \cite{Godfrey:2004ya} : 2004 Godfrey. Relativized quark model 
+
+\item[] \cite{Fulcher:1998ka} : 1998 Fulcher, Potential model. 
+
+\item[] \cite{Monteiro:2016rzi} : 2016 Antony Prakash et al. RQM with coupled channel effects. 
+
+\item[] \cite{Gregory:2010gm,Gregory:2009hq} : 2010 Lattice calculation HPQCD
+
+\item[] \cite{Wurtz:2015mqa} : 2015 Lewis, free form smearing, lattice calculation
+
+\item[] \cite{Dowdall:2012ab} : 2012 HPQCD Dowdall lattice calculation
+
+\item[] \cite{Patrignani:2016xqp} : PDG
+
+\eeit
+
+
+
+\bibliography{Bcpaper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
